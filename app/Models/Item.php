@@ -11,13 +11,9 @@ class Item extends Model
 
     protected $table = "item";
     protected $primaryKey = "item_id";
+    protected $keyType = 'string';
     public $incrementing = false;
     public $timestamps = true;
 
-    protected $fillable = ['item_id', 'category_id', 'name', 'sku', 'desc', 'price', 'stock', 'status', 'created_at', 'updated_at', 'deleted_at'];
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    protected $fillable = ['item_id', 'category', 'name', 'sku', 'desc', 'price', 'stock', 'status', 'created_at', 'updated_at', 'deleted_at'];
 }
